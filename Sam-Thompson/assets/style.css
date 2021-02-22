@@ -1,0 +1,265 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    
+    font: normal 16px sans-serif;
+    color: rgb(36,36,36)
+}
+
+nav{
+    list-style: none;
+    margin: 10px;
+}
+
+a{
+    color: rgb(247, 148, 164);
+    text-decoration: none;
+    opacity: .70;
+}
+
+a:hover{
+    opacity:1;
+    color: rgb(19, 83, 143);
+}
+
+li:hover{
+    transform: scale(1.1);
+}
+
+header{
+    position: absolute;
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 35px 100px 0;
+    animation: 1s fadein .5s forwards;
+    opacity: 0; 
+    color: rgb(143, 24, 30);
+}
+
+@keyframes fadein{
+    100%{
+        opacity: 1;
+        transform: translateX(50px);
+    }
+}
+
+header nav{
+    display:flex;
+    margin-right: -15px;
+    align-content: right;
+}
+
+header nav li{
+    margin: 0 10px; 
+}
+
+.container .background{
+    position:absolute;
+    height: 100%;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    background-size: cover;
+    z-index: -1;
+}
+
+.background{
+    background-image: url(./img/RamonSalinero.jpg);
+}
+
+.container-content{
+    font-family: 'Noto Sans JP', sans-serif;
+    position: relative;
+    color: rgb(88, 127, 163);
+    top: 40%;
+    left: 8%;
+    width: 33%;
+    align-content: center;
+    line-height: 50px;
+}
+
+.container-text{
+    opacity: 1;
+    animation-name: slidein;
+    animation-delay: none;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+}
+
+@keyframes slidein{
+0%{
+    transform: translateX(50px);
+    opacity: 0;
+}
+100%{
+    transform: translateX(0);
+    opacity: 1;
+}
+}
+
+.my-name{
+    color: rgb(131, 36, 36);
+    animation-name: colorchange;
+    animation-duration: 2s;
+    animation-delay: none;
+    animation-timing-function: linear;
+}
+
+@keyframes colorchange{
+    0%{
+        color: rgb(88, 127, 163);
+    }
+    100%{
+        color: rgb(131, 36, 36);
+
+    }
+}
+
+.socials{
+    position: absolute;
+    margin: 0 45%;
+    bottom: 20px;
+}
+
+.icon{
+    
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+    color: white;
+}
+
+.projects{
+    display: block;
+    position: relative;
+    top: 10%;
+    height: 80%;
+    width: 80%;
+    margin: auto;
+    opacity: 1;
+    background-color: rgba(112, 114, 112, 0.247);
+    border-radius:10px;
+    align-content: center;
+    animation-name: fadein;
+    animation-delay: none;
+    animation-timing-function: linear;
+    animation-duration: 2s;
+    
+}
+
+
+@keyframes fadein{
+    0%{opacity: 0}
+    100%{ opacity: 1;}
+}
+
+.project-card{
+    position: relative;
+    display: inline-block;
+    height: 48.5%;
+    width: 32.5%;
+    border: 3px solid black;
+    background-color: black;
+    margin-right: .22%;
+    margin-left: .3%;
+    margin-top: .5%;
+    border-radius: 10px;
+}
+
+
+
+.project-img{
+ position: relative;
+ display: block;
+ height: 89%;
+ width: 100%;
+ border-radius: 10px;
+}
+
+.project-img:hover{
+    opacity: .5;
+    filter: grayscale(100%);
+    transition: all 0.35s ease-in-out;
+}
+
+.project-content{
+    opacity: 0;
+    position: absolute;
+    top:0;
+    font-size: 22px;
+    width: 100%;
+    height: 90%;
+    background: rgb(0, 0, 0);
+    margin-bottom: -50px;
+    
+}
+
+.project-content:hover{
+    opacity: .6;
+    transition: all 0.35s ease-in-out;
+}
+
+.project-title{
+    text-align: center;
+    color: white;
+}
+
+.project-description{
+    padding: 15px;
+    line-height: 22px;
+    opacity: 1;
+    color: white;
+}
+
+.github-link{
+    color: white;
+    display: block;
+    margin: 5px 0 0 25px;
+    float: left;
+}
+
+.deployed-link{
+    color: white;
+    display: block;
+    margin: 5px 10px 0 25px;
+    float: right;
+}
+
+@media screen and (max-width: 1200px){
+    .project-card{
+        min-width: 49%;
+    }
+    .container-content{
+        width: 50%;
+        margin: none;
+    }
+    .container-text{
+        min-width: 50%;
+    }
+
+}
+
+@media screen and (max-width: 640px){
+    body{
+        background-color: #1d1717;
+    }
+    .background {
+        background-image: none;
+    }
+    .container-content{
+        width: 80%;
+        margin: none;
+    }
+    .container-text{
+        min-width: 80%;
+    }
+    .project-card{
+        width: 100%;
+    }
+}
