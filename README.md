@@ -1,2 +1,1 @@
-# Sam-Thompson
-My portfolio
+# Portfolio
